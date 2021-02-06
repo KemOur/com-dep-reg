@@ -4,9 +4,7 @@
        <!-- <div  v-if="result"> -->
             <ion-card>
                 <ion-card-header class="md hydrated">
-                    <ion-card-subtitle class="ion-text-center md hydrated" role="heading" aria-level="3">{{result.nom}}</ion-card-subtitle>
                     <ion-card-title class="ion-text-center md hydrated" role="heading" aria-level="2">{{result}}</ion-card-title>
-
                 </ion-card-header>
             </ion-card>
         </div>
