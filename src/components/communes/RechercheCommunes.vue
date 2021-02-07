@@ -32,6 +32,7 @@
                 e.preventDefault(this.ville)
                 console.log(this.ville)
                 {
+                    const isValidName = /^[a-zA-Z]+$/.test(this.ville)
                     const isValidZip = /^[0-9]{5}?$/.test(this.ville)
                     if (isValidZip){
                         axios.get(`https://geo.api.gouv.fr/communes?codePostal=${this.ville}` )
@@ -41,7 +42,6 @@
                                 console.log(this.result)
                             });
                     } else {
-                        const isValidName = /^[a-zA-Z]+$/.test(this.ville)
                         if (isValidName)
                             axios.get(`https://geo.api.gouv.fr/communes?nom=${this.ville}&boost=population&fields=population,departement,codesPostaux,region` )
                                 .then((response) => {
@@ -49,7 +49,9 @@
                                         this.result = response.data
                                         console.log(this.result)
                               });
-
+                        if (!isValidName || this.ville === ""){
+                            alert('veuillez entrer une ville ou code postal valide, merci!');
+                        }
                     }
                 }
             }

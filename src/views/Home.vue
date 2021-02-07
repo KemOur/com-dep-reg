@@ -28,7 +28,6 @@
 
 <script>
     import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonText } from '@ionic/vue';
-
     export default  {
         name: 'Home',
         components: { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonText }

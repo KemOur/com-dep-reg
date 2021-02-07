@@ -2,6 +2,7 @@
   <ion-page>
     <ion-tabs>
       <ion-tab-bar slot="bottom">
+
         <ion-tab-button tab="home" href="/">
           <ion-icon :icon="homeOutline" />
           <ion-label>home</ion-label>
@@ -21,6 +22,7 @@
           <ion-icon :icon="bicycleOutline" />
           <ion-label>regions</ion-label>
         </ion-tab-button>
+
       </ion-tab-bar>
     </ion-tabs>
   </ion-page>
