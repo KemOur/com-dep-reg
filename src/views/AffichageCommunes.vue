@@ -14,6 +14,7 @@
   import RechercheCommunes from "@/components/communes/RechercheCommunes";
   import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
 
+
   export default {
     name: 'AffichageCommunes',
     components: {

@@ -6,7 +6,7 @@
                 <ion-card-header class="md hydrated">
                     <ion-row>
                         <ion-col>
-                            <h1 class="ion-no-padding color-secondary"><strong>{{ r.nom }}</strong></h1>
+                            <h1 class="ion-no-padding" style="color: #3dc2ff"><strong>{{ r.nom }}</strong></h1>
                         </ion-col>
                     </ion-row>
                     <ion-row>
