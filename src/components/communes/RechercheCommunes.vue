@@ -5,7 +5,7 @@
                         name="ville"
                         :value="ville"
                         @input="ville = $event.target.value" show-cancel-button="never"
-                        placeholder="Paris..."
+                        placeholder="Code postal ou ville"
                         class="search">
             </ion-input>
             <ion-button expand="full" type="submit" color="dark">RECHERCHER</ion-button>
@@ -36,23 +36,19 @@
                     if (isValidZip){
                         axios.get(`https://geo.api.gouv.fr/communes?codePostal=${this.ville}` )
                             .then((response) => {
-                                response.data.forEach(result => {
-                                    this.result = ""
-                                    this.result = result
-                                    console.log(this.result.nom)
-                                });
-                            })
+                                response.data
+                                this.result = response.data
+                                console.log(this.result)
+                            });
                     } else {
                         const isValidName = /^[a-zA-Z]+$/.test(this.ville)
                         if (isValidName)
                             axios.get(`https://geo.api.gouv.fr/communes?nom=${this.ville}&boost=population&fields=population,departement,codesPostaux,region` )
                                 .then((response) => {
-                                    response.data.forEach(result => {
-                                        this.result = ""
-                                        this.result = result
-                                        console.log(this.result.nom)
-                                    });
-                                })
+                                    response.data
+                                        this.result = response.data
+                                        console.log(this.result)
+                              });
 
                     }
                 }
