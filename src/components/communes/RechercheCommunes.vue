@@ -1,14 +1,14 @@
 <template>
     <form @submit="onSubmit">
         <ion-toolbar color="light">
-            <ion-input  id="ville" style="margin: 9px"
+            <ion-input  id="ville" style="margin-left: 10px"
                         name="ville"
                         :value="ville"
                         @input="ville = $event.target.value" show-cancel-button="never"
-                        placeholder="Paris"
+                        placeholder="Paris..."
                         class="search">
             </ion-input>
-            <ion-button expand="full" type="submit" color="dark">Rechercher</ion-button>
+            <ion-button expand="full" type="submit" color="dark">RECHERCHER</ion-button>
         </ion-toolbar>
     </form>
     <ResultatDeRecherche v-bind:result="result"/>

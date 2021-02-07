@@ -1,7 +1,7 @@
 <template>
-    <form @submit="showdepa">
-        <ion-toolbar color="light">
-        <ion-select placeholder="Sélectionner" v-model="dep" id="selectedOption" @select="dep= $event.target.value">
+            <form @submit="showdepa">
+                <ion-toolbar color="light">
+                <ion-select placeholder="Sélectionner"  v-model="reg" id="selectedOption" @select="reg= $event.target.value">
                             <ion-select-option
                                     v-for="(r) in result"
                                     :key="r.code"
@@ -10,41 +10,39 @@
                             </ion-select-option>
                         </ion-select>
                     <ion-button type="submit" color="dark" expand="full">RECHERCHER</ion-button>
-            </ion-toolbar>
-    </form>
-        <ResultatDeRechercheD v-bind:selected="selected"/>
+                </ion-toolbar>
+            </form>
+    <ResultatDeRechercheR v-bind:selected="selected"/>
 </template>
 
 <script>
-    import ResultatDeRechercheD from "./ResultatDeRechercheD";
     import axios from "axios";
+    import ResultatDeRechercheR from "../Regions/ResultatDeRechercheR";
     export default  {
-        name: 'AffichageDepartements',
+        name: 'RechercheRegions',
         components: {
-            ResultatDeRechercheD,
+            ResultatDeRechercheR
         },
         data() {
             return {
-                dep: "",
+                reg: "",
                 result: null,
                 selected: null
             }
         },
-
         mounted() {
-            axios.get(`https://geo.api.gouv.fr/departements`)
+            axios.get(`https://geo.api.gouv.fr/regions`)
                 .then((response) => {
                     response.data;
                     this.result = response.data;
                     console.log(this.result)
                 });
         },
-
         methods: {
             showdepa(e) {
                 e.preventDefault()
                 // eslint-disable-next-line no-undef
-                axios.get('https://geo.api.gouv.fr/departements/'+selectedOption.value+'/communes')
+                axios.get('https://geo.api.gouv.fr/regions/'+selectedOption.value+'/departements')
                     .then((response) => {
                         response.data;
                         this.selected = response.data;

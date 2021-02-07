@@ -24,7 +24,7 @@ const routes = [
       },
       {
         path: 'tab3',
-        component: () => import('@/views/Tab3.vue')
+        component: () => import('@/views/AffichageRegion.vue')
       }
     ]
   }

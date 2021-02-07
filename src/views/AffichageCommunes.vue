@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title style="text-align: center; color: red">RC</ion-title>
+        <ion-title style="text-align: center; color: red">COMMUNES</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
@@ -24,6 +24,5 @@
       IonContent,
       IonPage
     },
-
   };
 </script>
